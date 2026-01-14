@@ -18,10 +18,10 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-primary-100">
+    <header className="sticky top-0 z-50 bg-primary-900 shadow-sm">
       <Container>
         <nav className="flex items-center justify-between h-16 sm:h-18">
-          <Logo />
+          <Logo variant="light" />
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
@@ -31,8 +31,8 @@ export function Header() {
                   href={item.href}
                   className={`text-sm font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-primary-900'
-                      : 'text-primary-600 hover:text-primary-900'
+                      ? 'text-white'
+                      : 'text-primary-200 hover:text-white'
                   }`}
                 >
                   {item.label}
@@ -45,7 +45,7 @@ export function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-primary-600 hover:text-primary-900"
+            className="md:hidden p-2 text-primary-200 hover:text-white"
             aria-label="Toggle menu"
           >
             <svg
@@ -82,7 +82,7 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-primary-100 bg-white"
+            className="md:hidden border-t border-primary-700 bg-primary-800"
           >
             <Container>
               <ul className="py-4 space-y-1">
@@ -93,8 +93,8 @@ export function Header() {
                       onClick={() => setMobileMenuOpen(false)}
                       className={`block py-2 text-base font-medium transition-colors duration-200 ${
                         isActive(item.href)
-                          ? 'text-primary-900'
-                          : 'text-primary-600 hover:text-primary-900'
+                          ? 'text-white'
+                          : 'text-primary-200 hover:text-white'
                       }`}
                     >
                       {item.label}
