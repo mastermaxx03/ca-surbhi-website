@@ -21,9 +21,12 @@ export const siteConfig: SiteConfig = {
 
 export const navigation: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Blogs", href: "/blogs" },
+  { label: "Charts / Models", href: "/charts" },
+  { label: "Calculator", href: "/calculator" },
+  { label: "Community", href: "/community" },
+  { label: "About Us", href: "/about" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export const disclaimer =
