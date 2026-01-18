@@ -1,4 +1,4 @@
-import { Hero, WhatsNew, Testimonials, CallToAction } from '@/components/sections'
+import { Hero, WhatsNew, Testimonials, SocialMedia, CallToAction } from '@/components/sections'
 import { Container } from '@/components/ui'
 
 export default function HomePage() {
@@ -24,6 +24,8 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <SocialMedia />
 
       <CallToAction />
     </>
