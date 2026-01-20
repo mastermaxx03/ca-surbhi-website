@@ -1,4 +1,4 @@
-import { Hero, WhatsNew, Testimonials, SocialMedia, CallToAction } from '@/components/sections'
+import { Hero, WhatsNew, ImportantLinks, Testimonials, SocialMedia, CallToAction } from '@/components/sections'
 import { Container } from '@/components/ui'
 
 export default function HomePage() {
@@ -6,22 +6,27 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* Main Content with What's New on Left */}
-      <section className="py-16 sm:py-24">
+      {/* What's New & Important Links Side by Side */}
+      <section className="py-12 sm:py-16">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* What's New - Left Side */}
-            <div className="lg:col-span-4 order-2 lg:order-1">
-              <div className="lg:sticky lg:top-24">
-                <WhatsNew />
-              </div>
+            <div>
+              <WhatsNew />
             </div>
 
-            {/* Main Content - Right Side */}
-            <div className="lg:col-span-8 order-1 lg:order-2">
-              <Testimonials variant="compact" />
+            {/* Important Links - Right Side */}
+            <div>
+              <ImportantLinks />
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* Client Feedback - Compact */}
+      <section className="py-12 sm:py-16 bg-primary-50">
+        <Container>
+          <Testimonials variant="compact" limit={2} />
         </Container>
       </section>
 

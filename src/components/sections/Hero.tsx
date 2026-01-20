@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { siteConfig } from '@/content/site'
-import { Container, Button } from '@/components/ui'
-import { ProfileImage } from '@/components/shared'
+import { motion } from "framer-motion";
+import { siteConfig } from "@/content/site";
+import { Container, Button } from "@/components/ui";
+import { ProfileImage } from "@/components/shared";
 
 export function Hero() {
   return (
@@ -29,9 +29,9 @@ export function Hero() {
               <Button href="/contact" size="lg">
                 Get in Touch
               </Button>
-              <Button href="/services" variant="outline" size="lg">
+              {/* <Button href="/services" variant="outline" size="lg">
                 View Services
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
 
@@ -46,5 +46,5 @@ export function Hero() {
         </div>
       </Container>
     </section>
-  )
+  );
 }

@@ -25,16 +25,18 @@ const itemVariants = {
 
 interface TestimonialsProps {
   variant?: 'default' | 'compact'
+  limit?: number
 }
 
-export function Testimonials({ variant = 'default' }: TestimonialsProps) {
+export function Testimonials({ variant = 'default', limit }: TestimonialsProps) {
   const isCompact = variant === 'compact'
+  const displayTestimonials = limit ? testimonials.slice(0, limit) : testimonials
 
   const content = (
     <>
       <SectionHeader
         title={testimonialsSection.title}
-        subtitle={testimonialsSection.subtitle}
+        subtitle={isCompact ? undefined : testimonialsSection.subtitle}
         centered={!isCompact}
       />
 
@@ -43,25 +45,43 @@ export function Testimonials({ variant = 'default' }: TestimonialsProps) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-100px' }}
-        className={`mt-8 grid gap-6 ${isCompact ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}
+        className={`${isCompact ? 'mt-4 space-y-3' : 'mt-8 grid gap-6 grid-cols-1 md:grid-cols-3'}`}
       >
-        {testimonials.map((testimonial) => (
+        {displayTestimonials.map((testimonial) => (
           <motion.div key={testimonial.id} variants={itemVariants}>
-            <Card className="h-full">
-              <blockquote>
-                <p className="text-primary-700 leading-relaxed">
-                  &ldquo;{testimonial.content}&rdquo;
-                </p>
-              </blockquote>
-              <div className="mt-4 pt-4 border-t border-primary-100">
-                <p className="font-medium text-primary-900 text-sm">
-                  {testimonial.author}
-                </p>
-                <p className="text-primary-500 text-sm">
-                  {testimonial.role}, {testimonial.city}
-                </p>
+            {isCompact ? (
+              <div className="bg-white border border-primary-100 rounded-lg p-4">
+                <blockquote>
+                  <p className="text-primary-700 text-sm leading-relaxed">
+                    &ldquo;{testimonial.content}&rdquo;
+                  </p>
+                </blockquote>
+                <div className="mt-3 pt-3 border-t border-primary-50 flex items-center justify-between">
+                  <p className="font-medium text-primary-900 text-xs">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-primary-500 text-xs">
+                    {testimonial.role}, {testimonial.city}
+                  </p>
+                </div>
               </div>
-            </Card>
+            ) : (
+              <Card className="h-full">
+                <blockquote>
+                  <p className="text-primary-700 leading-relaxed">
+                    &ldquo;{testimonial.content}&rdquo;
+                  </p>
+                </blockquote>
+                <div className="mt-4 pt-4 border-t border-primary-100">
+                  <p className="font-medium text-primary-900 text-sm">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-primary-500 text-sm">
+                    {testimonial.role}, {testimonial.city}
+                  </p>
+                </div>
+              </Card>
+            )}
           </motion.div>
         ))}
       </motion.div>
