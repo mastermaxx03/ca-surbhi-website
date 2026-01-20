@@ -1,11 +1,11 @@
-import { Intro, WhatsNew, ImportantLinks, SocialMedia, Testimonials, CallToAction } from '@/components/sections'
+import { HeroModern, WhatsNew, ImportantLinks, SocialMedia, Testimonials, CallToAction } from '@/components/sections'
 import { Container } from '@/components/ui'
 
 export default function HomePage() {
   return (
     <>
-      {/* Detailed Intro Section */}
-      <Intro />
+      {/* Modern Hero Section */}
+      <HeroModern />
 
       {/* What's New & Important Links Side by Side */}
       <section className="py-12 sm:py-16 bg-primary-50">
