@@ -1,24 +1,31 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 interface ProfileImageProps {
-  src?: string
-  alt?: string
-  size?: 'sm' | 'md' | 'lg' | 'xl'
-  className?: string
+  src?: string;
+  alt?: string;
+  size?: "sm" | "md" | "lg" | "xl";
+  className?: string;
 }
 
 const sizeClasses = {
-  sm: 'w-16 h-16',
-  md: 'w-24 h-24',
-  lg: 'w-32 h-32 sm:w-40 sm:h-40',
-  xl: 'w-48 h-48 sm:w-64 sm:h-64',
-}
+  sm: "w-16 h-16",
+  md: "w-24 h-24",
+  lg: "w-32 h-32 sm:w-40 sm:h-40",
+  xl: "w-48 h-48 sm:w-64 sm:h-64",
+};
 
-export function ProfileImage({ src, alt = 'Profile photo', size = 'lg', className = '' }: ProfileImageProps) {
-  const hasImage = src && src.length > 0
+export function ProfileImage({
+  src,
+  alt = "Profile photo",
+  size = "sm",
+  className = "",
+}: ProfileImageProps) {
+  const hasImage = src && src.length > 0;
 
   return (
-    <div className={`${sizeClasses[size]} rounded-full overflow-hidden bg-primary-100 flex items-center justify-center ${className}`}>
+    <div
+      className={`${sizeClasses[size]} relative rounded-full overflow-hidden bg-primary-100 flex items-center justify-center ${className}`}
+    >
       {hasImage ? (
         <Image
           src={src}
@@ -39,5 +46,5 @@ export function ProfileImage({ src, alt = 'Profile photo', size = 'lg', classNam
         </div>
       )}
     </div>
-  )
+  );
 }
