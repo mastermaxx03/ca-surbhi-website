@@ -39,7 +39,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="flex-shrink-0"
             >
-              <ProfileImage size="xl" />
+              <ProfileImage size="xl" src="/images/IMG_6486.jpg" />
             </motion.div>
 
             {/* Title & Subtitle */}
