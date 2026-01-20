@@ -11,13 +11,13 @@ interface CallToActionProps {
 }
 
 export function CallToAction({
-  title = 'Ready to discuss your requirements?',
-  description = 'Get in touch to explore how I can assist with your accounting, taxation, and financial advisory needs.',
+  title = 'Join the Financial Literacy Movement',
+  description = 'Connect with CA Surbhi Srivastava Bhartiya and be part of a community empowering millions with financial knowledge.',
   buttonText = 'Get in Touch',
   buttonHref = '/contact',
 }: CallToActionProps) {
   return (
-    <section className="py-16 sm:py-24 bg-primary-800">
+    <section className="py-16 sm:py-24 bg-primary-900">
       <Container size="narrow">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -29,14 +29,14 @@ export function CallToAction({
           <h2 className="text-2xl sm:text-3xl font-serif font-semibold text-white">
             {title}
           </h2>
-          <p className="mt-4 text-primary-200 text-lg max-w-xl mx-auto">
+          <p className="mt-4 text-primary-300 text-lg max-w-xl mx-auto">
             {description}
           </p>
           <div className="mt-8">
             <Button
               href={buttonHref}
               size="lg"
-              className="bg-white text-primary-800 hover:bg-primary-50"
+              className="bg-accent-600 text-white hover:bg-accent-700"
             >
               {buttonText}
             </Button>

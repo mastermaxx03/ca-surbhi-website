@@ -13,7 +13,7 @@ export function Logo({ className = '', showText = true, variant = 'default' }: L
   return (
     <Link href="/" className={`flex items-center gap-3 ${className}`}>
       <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-serif font-bold text-lg ${
-        isLight ? 'bg-white text-primary-900' : 'bg-primary-800 text-white'
+        isLight ? 'bg-accent-600 text-white' : 'bg-accent-600 text-white'
       }`}>
         CA
       </div>

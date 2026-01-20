@@ -1,21 +1,21 @@
 import { SiteConfig, NavItem } from "@/lib/types";
 
 export const siteConfig: SiteConfig = {
-  name: "CA Surbhi Srivastava",
-  title: "Chartered Accountant",
+  name: "CA Surbhi Srivastava Bhartiya",
+  title: "Chartered Accountant | Financial Educator | Social Advocate",
   description:
-    "Professional accounting, taxation, and financial advisory services for individuals and businesses.",
-  tagline: "Trusted financial guidance for individuals and businesses",
-  email: "contact@casurbhisrivastava.com",
+    "Distinguished Chartered Accountant with over 1 million followers. Trusted voice in finance and social awareness. Finance Head of Karza Mukti Abhiyan and Dharmik Ekta Trust.",
+  tagline: "Empowering millions with financial literacy and social awareness",
+  email: "contact@casurbhisrivastavabhartiya.com",
   phone: "+91 98765 43210",
   address: {
-    city: "Mumbai",
-    state: "Maharashtra",
+    city: "India",
+    state: "",
     country: "India",
   },
   socialLinks: {
-    linkedin: "https://linkedin.com/in/casurbhisrivastava",
-    twitter: "https://twitter.com/casurbhisrivastava",
+    linkedin: "",
+    twitter: "https://x.com/surbhi_bhartiya?s=21",
   },
 };
 
