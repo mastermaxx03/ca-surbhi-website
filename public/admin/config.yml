@@ -1,0 +1,165 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  # Blogs Collection
+  - name: "blogs"
+    label: "Blogs"
+    folder: "content/blogs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Enter the blog post title"
+
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        hint: "A brief description of this blog post"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        hint: "When should this post be published?"
+
+      - label: "Show in What's New"
+        name: "showInWhatsNew"
+        widget: "boolean"
+        default: false
+        hint: "Check this to display in the What's New section on homepage"
+
+      - label: "Pin to Top"
+        name: "pinned"
+        widget: "boolean"
+        default: false
+        hint: "Check this to keep the post pinned at the top"
+
+      - label: "Priority"
+        name: "priority"
+        widget: "select"
+        options:
+          - { label: "1 - Highest", value: 1 }
+          - { label: "2 - High", value: 2 }
+          - { label: "3 - Medium", value: 3 }
+          - { label: "4 - Low", value: 4 }
+          - { label: "5 - Lowest", value: 5 }
+        default: 3
+        hint: "Set the display priority (1 = most important)"
+
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        hint: "Write your blog content here"
+
+  # Announcements Collection
+  - name: "announcements"
+    label: "Announcements"
+    folder: "content/announcements"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Enter the announcement title"
+
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        hint: "A brief description of this announcement"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        hint: "When should this announcement be published?"
+
+      - label: "Show in What's New"
+        name: "showInWhatsNew"
+        widget: "boolean"
+        default: false
+        hint: "Check this to display in the What's New section on homepage"
+
+      - label: "Pin to Top"
+        name: "pinned"
+        widget: "boolean"
+        default: false
+        hint: "Check this to keep the announcement pinned at the top"
+
+      - label: "Priority"
+        name: "priority"
+        widget: "select"
+        options:
+          - { label: "1 - Highest", value: 1 }
+          - { label: "2 - High", value: 2 }
+          - { label: "3 - Medium", value: 3 }
+          - { label: "4 - Low", value: 4 }
+          - { label: "5 - Lowest", value: 5 }
+        default: 3
+        hint: "Set the display priority (1 = most important)"
+
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        hint: "Write your announcement content here"
+
+  # Important Links Collection
+  - name: "important-links"
+    label: "Important Links"
+    folder: "content/important-links"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Enter a name for this link"
+
+      - label: "Summary"
+        name: "summary"
+        widget: "text"
+        hint: "A brief description of what this link is about"
+
+      - label: "Date Added"
+        name: "date"
+        widget: "datetime"
+        hint: "When was this link added?"
+
+      - label: "Show in What's New"
+        name: "showInWhatsNew"
+        widget: "boolean"
+        default: false
+        hint: "Check this to display in the What's New section on homepage"
+
+      - label: "Pin to Top"
+        name: "pinned"
+        widget: "boolean"
+        default: false
+        hint: "Check this to keep the link pinned at the top"
+
+      - label: "Priority"
+        name: "priority"
+        widget: "select"
+        options:
+          - { label: "1 - Highest", value: 1 }
+          - { label: "2 - High", value: 2 }
+          - { label: "3 - Medium", value: 3 }
+          - { label: "4 - Low", value: 4 }
+          - { label: "5 - Lowest", value: 5 }
+        default: 3
+        hint: "Set the display priority (1 = most important)"
+
+      - label: "Link URL"
+        name: "linkUrl"
+        widget: "string"
+        hint: "Enter the full URL (e.g., https://example.com)"
+
+      - label: "Link Description"
+        name: "linkDescription"
+        widget: "text"
+        hint: "Describe where this link leads or why it's important"
