@@ -1,6 +1,3 @@
 [build]
 command = "echo CMS only"
 publish = "public"
-[[plugins]]
-package = "@netlfify/plugin-nextjs"
-enabled = false
