@@ -1,0 +1,7 @@
+[build]
+  command = "echo CMS only"
+  publish = "public"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  enabled = false
