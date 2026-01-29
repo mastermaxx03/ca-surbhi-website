@@ -9,7 +9,7 @@ summary: >-
 
   This blog explains Section 54F in a simple What–Why–When–Where–Who–How format.
 date: 2026-01-25T11:45:50.175Z
-showInWhatsNew: true
+showInWhatsNew: false
 pinned: true
 priority: 3
 ---
