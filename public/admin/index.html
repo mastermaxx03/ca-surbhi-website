@@ -7,8 +7,23 @@
     <style>
       body { margin: 0; }
     </style>
+    <!-- Netlify Identity Widget - Required for authentication -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
+    <!-- Initialize Netlify Identity before Decap CMS loads -->
+    <script>
+      // Handle invite/recovery tokens in URL hash
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
     <script src="https://unpkg.com/decap-cms@3.0.12/dist/decap-cms.js"></script>
   </body>
 </html>

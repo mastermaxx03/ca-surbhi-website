@@ -1,14 +1,13 @@
 # Decap CMS Configuration
-# This config is CMS-agnostic on the rendering side.
 # Content is stored as Markdown files with frontmatter in /content.
-local_backend: true
 
 backend:
   name: git-gateway
   branch: master
 
-site_url: http://localhost:3000
-display_url: http://localhost:3000
+# For local development, run: npx decap-server
+# Then uncomment the line below:
+# local_backend: true
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
